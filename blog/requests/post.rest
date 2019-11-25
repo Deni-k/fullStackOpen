@@ -1,0 +1,11 @@
+POST http://localhost:3001/api/blogs
+content-type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxhcyIsImlkIjoiNWRhZDQxMWU2YTMzYjFjOGJkYTcxMDBmIiwiaWF0IjoxNTcxNjM3NTU3fQ.YvSfs9w880OPfsU4ooYkzWwc1RLRIU_BvuA6IiMh_HE
+
+{
+    "url": "https://martinfowler.com",
+    "title": "Microservices",
+    "author": "Martin Fowler",
+    "likes":0,
+    "userId": "5dad411e6a33b1c8bda7100f"
+}

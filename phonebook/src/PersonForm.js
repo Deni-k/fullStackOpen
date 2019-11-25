@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Service from './services/Service';
-const PersonForm = ({persons, setPersons, setNewFilter, setFilteredPersons, setMessage}) => {
+const PersonForm = ({persons, setPersons, setNewFilter, setFilteredPersons, setMessage, setError}) => {
     const [ newName, setNewName ] = useState('')
     const [ newNumber, setNewNumber] = useState('')
     const handleNameChange = (event) => {
@@ -17,8 +17,7 @@ const PersonForm = ({persons, setPersons, setNewFilter, setFilteredPersons, setM
         }
         const test = [person,...persons];
         const b = test.filter((a)=> a.name===person.name);
-        console.log(b);
-        if(b.length===2){
+        if(b.length>=2){
             const result = window.confirm(`${newName} is already added to phonebook,replace the old number with a new one?`);
             if(result === true){
                 const person = persons.find((p)=> p.id === b[1].id);
@@ -43,6 +42,9 @@ const PersonForm = ({persons, setPersons, setNewFilter, setFilteredPersons, setM
                 setTimeout(() => {
                     setMessage(null)
                   }, 5000);
+            }).catch( error =>{
+                setError(true);
+                setMessage(error.response.data.error);
             });
             setNewName('');
             setNewNumber('');

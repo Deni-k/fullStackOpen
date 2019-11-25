@@ -22,7 +22,7 @@ const App = () => {
       <h2>Phonebook</h2>
       <Filter persons={persons} setPersons={setFilteredPersons} newFilter={newFilter} setNewFilter={setNewFilter}></Filter>
       <h3>add a new</h3>
-      <PersonForm persons={persons} setPersons={setPersons} setNewFilter={setNewFilter} setFilteredPersons={setFilteredPersons} setMessage={setMessage}></PersonForm>
+      <PersonForm persons={persons} setPersons={setPersons} setNewFilter={setNewFilter} setFilteredPersons={setFilteredPersons} setMessage={setMessage} setError={setError}></PersonForm>
       <h2>Numbers</h2>
       <Persons newFilteredPersons={newFilteredPersons} persons={persons} setPersons={setPersons} setFilteredPersons={setFilteredPersons} setError={setError} setMessage={setMessage}></Persons>
     </div>
